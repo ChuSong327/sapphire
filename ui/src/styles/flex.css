@@ -1,0 +1,91 @@
+:root,
+:root > * {
+    --flex: {
+        display: flex;
+    };
+    --flex-direction-row: {
+        @apply --flex;
+
+        flex-direction: row;
+    };
+    --flex-direction-row-reverse: {
+        @apply --flex;
+
+        flex-direction: row-reverse;
+    };
+    --flex-direction-column: {
+        @apply --flex;
+
+        flex-direction: column;
+    };
+    --flex-direction-column-reverse: {
+        @apply --flex;
+
+        flex-direction: column-reverse;
+    };
+    --flex-wrap-nowrap: {
+        @apply --flex;
+
+        flex-wrap: nowrap;
+    };
+    --flex-wrap: {
+        @apply --flex;
+
+        flex-wrap: wrap;
+    };
+    --flex-wrap-reverse: {
+        @apply --flex;
+
+        flex-wrap: wrap-reverse;
+    };
+    --justify-content-flex-start: {
+        @apply --flex;
+
+        justify-content: flex-start;
+    };
+    --justify-content-flex-end: {
+        @apply --flex;
+
+        justify-content: flex-end;
+    };
+    --justify-content-center: {
+        @apply --flex;
+
+        justify-content: center;
+    };
+    --justify-content-space-around: {
+        @apply --flex;
+
+        justify-content: space-around;
+    };
+    --justify-content-space-between: {
+        @apply --flex;
+
+        justify-content: space-between;
+    };
+    --align-items-stretch: {
+        @apply --flex;
+
+        align-items: stretch;
+    };
+    --align-items-baseline: {
+        @apply --flex;
+
+        align-items: baseline;
+    };
+    --align-items-center: {
+        @apply --flex;
+
+        align-items: center;
+    };
+    --align-items-flex-start: {
+        @apply --flex;
+
+        align-items: flex-start;
+    };
+    --align-itmes-flex-end: {
+        @apply --flex;
+
+        align-items: flex-end;
+    };
+}

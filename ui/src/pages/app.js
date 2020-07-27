@@ -1,21 +1,33 @@
 import React from 'react';
 
-import '../sass/main.scss';
-
 import {
-    BrowserRouter as Router,
+    BrowserRouter,
     Switch,
-    Route
+    Route,
+    Redirect
 } from 'react-router-dom';
 
-import LandingPage from './landingPage';
+import '../styles/index.css';
+
+import Nav from '../components/navigation/nav';
+import ShuDong from './shu-dong/shu-dong';
+import BBS from './bbs/bbs';
 
 export default function App() {
     return (
-        <Router>
-            <Switch>
-                <Route path='/'><LandingPage /></Route>
-            </Switch>
-        </Router>
+        <>
+            <Nav />
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path='/'>
+                        <Redirect to='/qqh'/>
+                    </Route>
+                    <Route exact path='/qqh' component={ ShuDong } />
+                    <Route exact path='/bbs' component={ BBS } />
+                    <Route exact path='/login' />
+                </Switch>
+            </BrowserRouter>
+        </>
     )
 }
+  

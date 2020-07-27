@@ -10,32 +10,46 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         hot: true,
+        historyApiFallback: true,
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     module: {
         rules: [
             {
-                test: /\.js?$/,
-                loader: 'babel-loader',
-                exclude: [/node_modules/]
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                      presets: ['@babel/preset-env']
+                    }
+                }
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.css$/i,
                 use: [ 
                     'style-loader',
                     'css-loader',
-                    'sass-loader' 
                 ]
-            }
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader',
+                ],
+            },
         ]
     },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: '小小树洞',
+            template: './src/index.html',
+            filename: './index.html'
         })
     ]
 };

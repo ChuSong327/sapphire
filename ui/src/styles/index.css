@@ -1,0 +1,16 @@
+@import './colors.css';
+@import './layout.css';
+@import './flex.css';
+@import './fonts.css';
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--body-background);
+    font-family: var(--font-family);
+}
+
+body a {
+    text-decoration: none;
+    color: inherit;
+}

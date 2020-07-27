@@ -1,0 +1,6 @@
+:root, 
+:root > * {
+    --font-family: "caros", "Microsoft Yahei", "STXihei", sans-serif;
+    --font-small: 12px;
+    --font-normal: 15px;
+}

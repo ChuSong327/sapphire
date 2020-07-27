@@ -1,0 +1,19 @@
+.NavBar {
+    height: 30px;
+    padding: 10px;
+    position: relative;
+    background-color: var(--primary-blue);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-family);
+}
+
+.NavBar-logo {
+    height: 100%;
+}
+
+.NavBar-logo img {
+    height: 100%;
+}

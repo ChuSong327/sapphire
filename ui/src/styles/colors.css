@@ -1,0 +1,15 @@
+:root,
+:root > * {
+    --primary-blue: #4897d8;
+    --primary-yellow: #FFDB5C;
+    --primary-red: #FA6E59;
+    --primary-orange: #F8A055;
+
+    --primary-text-color: #000000;
+    --secondary-text-color: #ffffff;
+    --tertiary-text-color: var(--primary-blue);
+
+    --secondary-blue: rgba(72, 151, 216, 0.7);
+    
+    --body-background: #FDFBF5;
+}

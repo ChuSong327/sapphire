@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
+// import store from './redux/store';
 
 import App from './pages/app';
 
 console.log('in index.js');
-const rootElement = document.createElement('root');
+const rootElement = document.getElementById("root");
 ReactDOM.render(
-    <Provider>
-        <App />
-    </Provider>,
+    // <Provider store={store}>
+        <App />,
+    // </Provider>,
     rootElement
 );
