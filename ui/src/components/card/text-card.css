@@ -35,6 +35,10 @@
     box-shadow: none;
 }
 
+.TextCard-container.list {
+    width: 100%;
+}
+
 .TextCard-date {
     color: var(--tertiary-text-color);
     font-size: var(--font-extra-small);

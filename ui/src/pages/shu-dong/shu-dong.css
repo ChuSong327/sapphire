@@ -9,20 +9,26 @@
     height: 100%;
 }
 
-.ShuDong-content {
+.ShuDong-content.grid {
     margin-top: var(--gutter);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 @media only screen and (max-width: 1200px) {
-    .ShuDong-content {
+    .ShuDong-content.grid {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media only screen and (max-width: 900px) {
-    .ShuDong-content {
+    .ShuDong-content.grid {
         grid-template-columns: 1fr;
     }
+}
+
+.ShuDong-content.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -5,14 +5,14 @@ import IconSet from '../icons/iconset';
 import './text-card.css';
 
 export default function TextCard(props) {
-    const { card, view, handleCardClick, handleIconClick, id } = props;
+    const { card, view, handleCardClick, handleLikeClick, id } = props;
     const onCardClick = (evt) => {
         if (view !== 'detail') {
             handleCardClick(evt, id);
         }
     };
     const onIconClick = (evt) => {
-        handleIconClick(evt, id);
+        handleLikeClick(evt, id);
     }
     return (
         <div className={`TextCard-container ${view}`} onClick={onCardClick}>

@@ -44,6 +44,7 @@ export default function ShuDong() {
         {id: `${Math.random().toString(36).substring(5)}`, date: moment().format('lll'), text: '小小老鼠小小老鼠穿花衣，大脸猫大脸猫长胡须，一个尾巴细又长，一个脸大长胡须，喵咪咪喵', likes: 24},
     ]);
     const[selectedCard, setSelectedCard] = useState(null);
+    const [view, setView] = useState('grid');
 
     // When click the card, pop up the card in detail view
     const handleCardClick = (evt, id) => {
@@ -56,9 +57,22 @@ export default function ShuDong() {
     };
 
     // When heart icon is clicked, increment the count by 1
-    const handleIconClick = (evt, id) => {
+    const handleLikeClick = (evt, id) => {
         evt.stopPropagation();
         // todo: increment the likes count
+    };
+
+    const handleViewChange = (evt) => {
+        switch (evt.currentTarget.id) {
+            case 'list':
+                setView('list');
+                break;
+            case 'grid':
+                setView('grid');
+                break;
+            default:
+                setView('grid');
+        }
     };
 
     window.onclick = (evt) => {
@@ -74,23 +88,23 @@ export default function ShuDong() {
         <>
             <div id='shudong' className='Shudong-container'>
                 {/* header row */}
-                    <Header title={'树洞悄悄话'} tags={tags}/>
+                    <Header title={'树洞悄悄话'} tags={tags} handleViewChange={handleViewChange}/>
                 {/* card row */}
-                    <div className='ShuDong-content grid'>
-                    {cards.map((card, index) => (
-                        <TextCard
-                            card={card}
-                            key={index}
-                            id={card['id']}
-                            view='grid'
-                            handleCardClick={handleCardClick}
-                            handleIconClick={handleIconClick}
-                        /> 
-                    ))}
+                    <div className={`ShuDong-content ${view}`}>
+                        {cards.map((card, index) => (
+                            <TextCard
+                                card={card}
+                                key={index}
+                                id={card['id']}
+                                view={view}
+                                handleCardClick={handleCardClick}
+                                handleLikeClick={handleLikeClick}
+                            /> 
+                        ))}
                     </div>
             </div>
             {!!selectedCard
-                ? <Overlay card={selectedCard} id={selectedCard.id} handleIconClick={handleIconClick}/>
+                ? <Overlay card={selectedCard} id={selectedCard.id} handleLikeClick={handleLikeClick}/>
                 : null}
         </>
     )
