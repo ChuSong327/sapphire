@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 
 import App from './pages/app';
 
-console.log('in index.js');
 const rootElement = document.getElementById("root");
 ReactDOM.render(
     // <Provider store={store}>

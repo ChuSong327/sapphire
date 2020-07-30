@@ -3,10 +3,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin: 0 var(--gutter-extra-small);
 }
 
 .Header-title {
-    color: var(--tertiary-text-color);
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: flex-end;
 }
 
 .Header-tags {
@@ -14,10 +17,20 @@
     width: 100%;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-left: var(--gutter)
+    margin: var(--gutter)
 
 }
 
 .Header-tools {
-    align-self: flex-end;
+    display: flex;
+}
+
+.Header-tools-list {
+    background-color: var(--primary-orange);
+    border-radius: 50% 50%;
+    padding: 5px;
+}
+
+.hidden {
+    display: none;
 }

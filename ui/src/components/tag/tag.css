@@ -9,10 +9,14 @@
     font-size: var(--font-normal);
     font-weight: 300;
 }
+.Tag-text:hover {
+    cursor: pointer;
+    color: var(--secondary-text-color);
+}
 
 .Tag-text em {
     background-color: var(--secondary-blue);
-    color: var(--secondary-text-color);
+    color: var(--primary-text-color);
     font-weight: 300;
     font-size: var(--font-small);
     text-align: center;

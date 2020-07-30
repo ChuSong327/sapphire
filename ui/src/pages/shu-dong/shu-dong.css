@@ -1,0 +1,28 @@
+.Shudong-container {
+    padding: var(--gutter) calc(10 * var(--gutter));
+}
+
+.Shudong-container.blur {
+    opacity: 0.3;
+    pointer-events: none;
+    overflow: hidden;
+    height: 100%;
+}
+
+.ShuDong-content {
+    margin-top: var(--gutter);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 1200px) {
+    .ShuDong-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .ShuDong-content {
+        grid-template-columns: 1fr;
+    }
+}

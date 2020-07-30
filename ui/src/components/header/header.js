@@ -2,12 +2,17 @@ import React from 'react';
 
 import Tag from '../tag/tag';
 import Button from '../button/button';
+import IconSet from '../icons/iconset';
+
 import './header.css';
 
 export default function Header(props) {
     return (
         <div className='Header-container'>
-            <h3 className='Header-title'>{props.title}</h3>
+            <h3 className='Header-title'>
+                <IconSet type='forest'/>
+                {props.title}
+            </h3>
             <div className='Header-content'>
                 <Button text={'一吐为快'} url='/qqh/speakitout'/>
                 <div className='Header-tags'>
@@ -17,7 +22,11 @@ export default function Header(props) {
                         )
                     })}
                 </div>
-                <div className='Header-tools'>tools</div>
+                <div className='Header-tools'>
+                    <IconSet type='list' />
+                    <IconSet type='grid' />
+                    <IconSet type='sort' />
+                </div>
             </div>
         </div>
     )

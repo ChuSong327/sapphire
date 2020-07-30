@@ -1,0 +1,33 @@
+.Iconset-wrapper {
+    padding-top: 1px;
+    display: inline-block;
+}
+
+.Iconset-tool {
+    background-color: var(--primary-orange);
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    transition: 0.2s;
+}
+
+.Iconset-tool:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.Iconset-tool.sort {
+    font-weight: bold;
+}
+
+.Iconset-heart {
+    cursor: pointer;
+    transition: 0.2s;
+}
+.Iconset-heart:hover {
+    transform: scale(1.2);
+}

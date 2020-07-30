@@ -1,0 +1,81 @@
+.TextCard-container {
+    background-color: var(--card-background);
+    padding: var(--gutter-small);
+    margin: var(--gutter-extra-small);
+    border-radius: 5px;
+    position: relative;
+    transition: 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.TextCard-container:hover {
+    box-shadow: 0px 5px 9px 0px rgba(173,170,173,1);
+}
+
+.TextCard-container.grid {
+    height: 200px;
+}
+
+.TextCard-container.detail {
+    cursor: default;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 50%;
+    opacity: 1;
+    overflow: scroll;
+}
+
+.TextCard-container.detail:hover {
+    box-shadow: none;
+}
+
+.TextCard-date {
+    color: var(--tertiary-text-color);
+    font-size: var(--font-extra-small);
+}
+
+.TextCard-content {
+    font-size: var(--font-small);;
+    margin: var(--gutter-extra-small) 0;
+    line-height: 1.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;  
+    overflow : hidden;
+    text-overflow: ellipsis;
+}
+
+.TextCard-content.detail {
+    height: 100%;
+    overflow-y: scroll;
+    text-overflow: none;
+}
+
+.TextCard-footer {
+    display: flex;
+    align-items: center;
+}
+
+.TextCard-footer img {
+    transition: 0.2s;
+    height: var(--gutter-small);
+    width: var(--gutter-small);
+}
+
+.TextCard-footer img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.TextCard-footer-likes {
+    font-size: var(--font-extra-small);
+    color: var(--tertiary-text-color);
+    margin-left: 5px;
+    text-align: center;
+}
