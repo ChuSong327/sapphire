@@ -16,7 +16,7 @@ export default function Nav() {
             {/* Tabs */}
             <NavTab />
             {/* Menu */}
-            <Button text={'登陆 / 注册'}/>
+            <Button text={'登陆 / 注册'} type={'create'}/>
         </div>
     )
 }

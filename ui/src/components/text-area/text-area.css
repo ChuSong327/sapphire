@@ -1,0 +1,10 @@
+textarea[name='content'] {
+    outline: none;
+    resize: none;
+    height: 60%;
+    width: 100%;
+    border-radius: 10px;
+    overflow-y: scroll;
+    padding: var(--gutter);
+    border: none;
+}

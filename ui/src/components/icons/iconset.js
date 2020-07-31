@@ -1,11 +1,11 @@
 import React from 'react';
 
 import './iconset.css';
-import Heart from '../../images/heart.svg';
-import Sort from '../../images/sort.svg';
-import Grid from '../../images/grid.svg';
-import List from '../../images/list.svg';
-import Forest from '../../images/forest.svg';
+import Heart from './svg/heart.svg';
+import Sort from './svg/sort.svg';
+import Grid from './svg/grid.svg';
+import List from './svg/list.svg';
+import Forest from './svg/forest.svg';
 
 export default function IconSet(props) {
     const { type, handleViewChange } = props;

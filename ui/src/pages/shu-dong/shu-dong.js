@@ -4,6 +4,8 @@ import moment from 'moment'
 import Header from '../../components/header/header';
 import TextCard from '../../components/card/text-card';
 import Overlay from '../../components/overlay/overlay';
+import TextArea from '../../components/text-area/text-area';
+import Button from '../../components/button/button';
 
 import './shu-dong.css';
 
@@ -45,6 +47,7 @@ export default function ShuDong() {
     ]);
     const[selectedCard, setSelectedCard] = useState(null);
     const [view, setView] = useState('grid');
+    const [mode, setMode] = useState('default');
 
     // When click the card, pop up the card in detail view
     const handleCardClick = (evt, id) => {
@@ -62,6 +65,7 @@ export default function ShuDong() {
         // todo: increment the likes count
     };
 
+    // Switch between list view and grid view
     const handleViewChange = (evt) => {
         switch (evt.currentTarget.id) {
             case 'list':
@@ -75,20 +79,70 @@ export default function ShuDong() {
         }
     };
 
-    window.onclick = (evt) => {
-        const overlay = document.getElementById('overlay');
-        if (evt.target == overlay) {
-            setSelectedCard(null);
-            const container = document.getElementById('shudong');
-            container.classList.remove('blur');
+    const handleCreateClick = () => {
+        setMode('create');
+    };
+
+    const handleFooterAction = (evt) => {
+        setMode('default');
+
+        switch (evt.target.name) {
+            case 'submit': 
+                // submit logic
+                break;
+            case 'cancel': 
+                break;
+            default:
+                break;
         }
     };
 
+    const handleOverlayClick = () => {
+        window.onclick = (evt) => {
+            const overlay = document.getElementById('overlay');
+            if (evt.target == overlay) {
+                setSelectedCard(null);
+                const container = document.getElementById('shudong');
+                container.classList.remove('blur');
+            }
+        };
+    };
+
+    const overlayControl = (prop) => {
+        switch (mode) {
+            case 'create': 
+                return (
+                    <div className='ShuDong-create-container'>
+                        <TextArea type={'qqh'} name={'content'}/>
+                        <div className='ShuDong-create-footer'>
+                            <Button type={'cancel'} text={'取消'} handleClick={prop.func}/>
+                            <Button type={'submit'} text={'发表'} handleClick={prop.func}/>
+                        </div>
+                        
+                    </div>
+                );
+            case 'default':
+                return (
+                    <TextCard 
+                        card={prop.card}
+                        id={prop.id}
+                        view='detail'
+                        handleLikeClick={prop.func}
+                    />
+                )
+        }
+    }
+
     return (
         <>
-            <div id='shudong' className='Shudong-container'>
+            <div id='shudong' className='ShuDong-container'>
                 {/* header row */}
-                    <Header title={'树洞悄悄话'} tags={tags} handleViewChange={handleViewChange}/>
+                    <Header
+                        title={'树洞悄悄话'}
+                        tags={tags}
+                        handleViewChange={handleViewChange}
+                        handleClick={handleCreateClick}
+                    />
                 {/* card row */}
                     <div className={`ShuDong-content ${view}`}>
                         {cards.map((card, index) => (
@@ -104,8 +158,15 @@ export default function ShuDong() {
                     </div>
             </div>
             {!!selectedCard
-                ? <Overlay card={selectedCard} id={selectedCard.id} handleLikeClick={handleLikeClick}/>
+                ? <Overlay
+                    control={overlayControl({mode:'default', card:selectedCard, id:selectedCard.id, func:handleLikeClick})}
+                    handleClick={handleOverlayClick}
+                  />
                 : null}
+            {mode === 'create'
+                ? <Overlay control={overlayControl({mode:'create', func:handleFooterAction})} />
+                : null
+            }
         </>
-    )
+    )  
 }

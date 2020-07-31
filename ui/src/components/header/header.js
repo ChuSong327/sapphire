@@ -3,19 +3,17 @@ import React from 'react';
 import Tag from '../tag/tag';
 import Button from '../button/button';
 import IconSet from '../icons/iconset';
+import SectionTitle from '../section-title/section-title';
 
 import './header.css';
 
 export default function Header(props) {
-    const { title, tags, handleViewChange } = props;
+    const { title, tags, handleViewChange, handleClick } = props;
     return (
         <div className='Header-container'>
-            <h3 className='Header-title'>
-                <IconSet type='forest'/>
-                {title}
-            </h3>
+            <SectionTitle title={title}/>
             <div className='Header-content'>
-                <Button text={'一吐为快'} url='/qqh/speakitout'/>
+                <Button text={'一吐为快'} type={'create'} handleClick={handleClick}/>
                 <div className='Header-tags'>
                     {tags.map((tag, index) => {
                         return (

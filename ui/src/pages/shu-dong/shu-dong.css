@@ -1,8 +1,8 @@
-.Shudong-container {
+.ShuDong-container {
     padding: var(--gutter) calc(10 * var(--gutter));
 }
 
-.Shudong-container.blur {
+.ShuDong-container.blur {
     opacity: 0.3;
     pointer-events: none;
     overflow: hidden;
@@ -31,4 +31,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.ShuDong-create-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 500px;
+}
+
+.ShuDong-create-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ShuDong-create-footer Button {
+    margin: var(--gutter-small);
 }
