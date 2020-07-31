@@ -13,10 +13,11 @@ export default function Nav() {
             <div className='NavBar-logo'>
                 <a href='/'><img src={ Logo } /></a>
             </div>
+            {/* Hide Tabs and Registration function for first release */}
             {/* Tabs */}
-            <NavTab />
+            {/* <NavTab /> */}
             {/* Menu */}
-            <Button text={'登陆 / 注册'} type={'create'}/>
+            {/* <Button text={'登陆 / 注册'} type={'create'}/> */}
         </div>
     )
 }

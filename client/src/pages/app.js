@@ -23,7 +23,7 @@ export default function App() {
                         <Redirect to='/qqh'/>
                     </Route>
                     <Route path='/qqh' component={ ShuDong } />
-                    <Route exact path='/bbs' component={ BBS } />
+                    {/* <Route exact path='/bbs' component={ BBS } /> */}
                     <Route exact path='/login' />
                 </Switch>
             </BrowserRouter>
